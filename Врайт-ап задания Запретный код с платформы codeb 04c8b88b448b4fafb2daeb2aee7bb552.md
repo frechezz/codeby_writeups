@@ -10,20 +10,20 @@
 
 Переходим по указанному адресу **(62.173.140.174:16035)** и видим страницу авторизации с возможностью создания аккаунта
 
-![Untitled](%D0%92%D1%80%D0%B0%D0%B8%CC%86%D1%82-%D0%B0%D0%BF%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%97%D0%B0%D0%BF%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%B8%CC%86%20%D0%BA%D0%BE%D0%B4%20%D1%81%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D1%8B%20codeb%2004c8b88b448b4fafb2daeb2aee7bb552/Untitled%201.png)
+![Untitled](content/Untitled%201.png)
 
 После регистрации попадаем на страницу с логами входа. При регистрации аккаунта я сразу решил попробовать проэксплуатировать XSS уязвимость и в поле *Username* вставил тестовый скрипт `<script>alert(1)</alert>`
 Страница после входа выглядит так:
 
-![Untitled](%D0%92%D1%80%D0%B0%D0%B8%CC%86%D1%82-%D0%B0%D0%BF%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%97%D0%B0%D0%BF%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%B8%CC%86%20%D0%BA%D0%BE%D0%B4%20%D1%81%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D1%8B%20codeb%2004c8b88b448b4fafb2daeb2aee7bb552/Untitled%202.png)
+![Untitled](content/Untitled%202.png)
 
 ---
 
 Попробуем зайти в наш аккаунт с другого профиля в хром но с другим паролем, чтобы попытка входа отобразилась в логах
 
-![Untitled](%D0%92%D1%80%D0%B0%D0%B8%CC%86%D1%82-%D0%B0%D0%BF%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%97%D0%B0%D0%BF%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%B8%CC%86%20%D0%BA%D0%BE%D0%B4%20%D1%81%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D1%8B%20codeb%2004c8b88b448b4fafb2daeb2aee7bb552/Untitled%203.png)
+![Untitled](content/Untitled%203.png)
 
-![Untitled](%D0%92%D1%80%D0%B0%D0%B8%CC%86%D1%82-%D0%B0%D0%BF%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%97%D0%B0%D0%BF%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%B8%CC%86%20%D0%BA%D0%BE%D0%B4%20%D1%81%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D1%8B%20codeb%2004c8b88b448b4fafb2daeb2aee7bb552/Untitled%204.png)
+![Untitled](content/Untitled%204.png)
 
 Видим, что наш скрипт успешно отработал
 
@@ -31,7 +31,7 @@
 
 Теперь же наша задача попасть в админ панель, посмотрим, из чего состоят cookie, чтобы мы могли по ним попасть к админу
 
-![Untitled](%D0%92%D1%80%D0%B0%D0%B8%CC%86%D1%82-%D0%B0%D0%BF%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%97%D0%B0%D0%BF%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%B8%CC%86%20%D0%BA%D0%BE%D0%B4%20%D1%81%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D1%8B%20codeb%2004c8b88b448b4fafb2daeb2aee7bb552/Untitled%205.png)
+![Untitled]content/Untitled%205.png)
 
 ---
 
@@ -90,15 +90,15 @@ print(response.text)
 
 Запускаем и ждем  ответа в бурпе
 
-![Untitled](%D0%92%D1%80%D0%B0%D0%B8%CC%86%D1%82-%D0%B0%D0%BF%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%97%D0%B0%D0%BF%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%B8%CC%86%20%D0%BA%D0%BE%D0%B4%20%D1%81%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D1%8B%20codeb%2004c8b88b448b4fafb2daeb2aee7bb552/Untitled%206.png)
+![Untitled]content/Untitled%206.png)
 
 Тут нас интересует phpsessid, копируем его и подменяем через cookie editor 
 
-![Untitled](%D0%92%D1%80%D0%B0%D0%B8%CC%86%D1%82-%D0%B0%D0%BF%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%97%D0%B0%D0%BF%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%B8%CC%86%20%D0%BA%D0%BE%D0%B4%20%D1%81%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D1%8B%20codeb%2004c8b88b448b4fafb2daeb2aee7bb552/Untitled%207.png)
+![Untitled]content/Untitled%207.png)
 
 И попадаем в админ панель с флагом в ней!
 
-![Untitled](%D0%92%D1%80%D0%B0%D0%B8%CC%86%D1%82-%D0%B0%D0%BF%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%97%D0%B0%D0%BF%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%B8%CC%86%20%D0%BA%D0%BE%D0%B4%20%D1%81%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D1%8B%20codeb%2004c8b88b448b4fafb2daeb2aee7bb552/Untitled%208.png)
+![Untitled](content/Untitled%208.png)
 
 ---
 
